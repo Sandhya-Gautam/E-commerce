@@ -10,7 +10,8 @@ export default {
         'sm': { min: '650px' },
         'md': { min: '800px' },
         'lg': { min: '1000px' },
+      },
     },
+    plugins: [],
   },
-  plugins: [],
-}}
+}
