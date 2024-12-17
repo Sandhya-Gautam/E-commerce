@@ -28,10 +28,10 @@ const status = reactive<Status>({
 function emitAllVariables() {
   emit('updatedVariables', status)
 }
-const display = ref(false)
+const display = ref<boolean>(false)
 
-const header = ref('Our Collection')
-const text = ref(
+const header = ref<string>('Our Collection')
+const text = ref<string>(
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 )
 
@@ -92,7 +92,6 @@ function categorySelection(event) {
 }
 function productSelection(event) {
   if (event.target.textContent === 'Body') {
-    // console.error('body')
     status.body = true
     status.hair = false
     status.scent = false

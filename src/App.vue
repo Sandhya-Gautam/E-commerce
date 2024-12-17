@@ -22,14 +22,17 @@ const status = reactive({
 function updatedVariables(data) {
   Object.keys(data).forEach((key) => {
     if (key in status) {
-      status.key = data.key
+      status[key] = data[key]
     }
   })
+}
+function handle(data) {
+  console.error(data)
 }
 </script>
 
 <template class="relative">
-  <Header @updated-variables="(data) => updatedVariables(data)" />
+  <Header @updated-variables="updatedVariables" />
   <div
     class="grid gap-7 m-14 grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2"
   >
@@ -38,6 +41,7 @@ function updatedVariables(data) {
       name="MONET"
       price="$40.5"
       url="product1.jpeg"
+      @click="handle"
     />
     <Product
       company="Grown Alchemy"

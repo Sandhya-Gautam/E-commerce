@@ -5,11 +5,14 @@ defineProps<{
   name: string
   price: string
 }>()
+const emit = defineEmits<{
+  (event: 'click', data: number): void
+}>()
 </script>
 
 <template>
   <div class="w-auto p-7 border shadow-md shadow-slate-300 h-auto">
-    <div class="h-4/6 justify-center align-middle text-center">
+    <div class="h-4/6 justify-center align-middle text-center" @click="emit('click', 123)">
       <img
         class="w-full h-full"
         width="200px"
